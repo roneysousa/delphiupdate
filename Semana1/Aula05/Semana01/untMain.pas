@@ -55,6 +55,7 @@ begin
                Endereco := 'QUADRA 337 CASA 16, DIRCEU II';
                Cidade   := 'Teresina';
                DataNascimento := StrToDateTime( Edit1.Text );
+               Saldo    := 1000;
                Cadastrar;
                CriarFinanceiro;
                //
@@ -74,14 +75,14 @@ begin
      try
           With objFornecedor do
           begin
-               Nome     := 'Roney';
+               Nome     := 'Erdemann';
                RazaoSocial := 'oneSupersonic';
                Telefone := '8830-0544';
                Endereco := 'QUADRA 337 CASA 16, DIRCEU II';
                Cidade   := 'Teresina';
                DataNascimento := StrToDateTime( Edit1.Text );
                Cadastrar;
-               CriarFinanceiro;
+               CriarFinanceiro(6000);
                //
                ShowMessage('Idade : ' + InttoStr(Idade));
                ShowMessage('Logradouro : ' + Endereco);

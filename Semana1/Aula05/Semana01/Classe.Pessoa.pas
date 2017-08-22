@@ -23,7 +23,8 @@ Type
       constructor Create(aConexao : IConexao); virtual;
       destructor Destroy;override;
       procedure Cadastrar;
-      procedure CriarFinanceiro;
+      procedure CriarFinanceiro;  overload;
+      procedure CriarFinanceiro(Value : Currency); overload;
       Function Idade : Integer;
       property Nome : String read FNome write SetNome;
       property DataNascimento : TDatetime read FDataNascimento write SetDataNascimento;
@@ -65,6 +66,20 @@ begin
      UF    := 'PI';
 end;
 
+procedure TPessoa.CriarFinanceiro(Value: Currency);
+Var
+    Lista : TStringList;
+begin
+     Lista := TStringList.Create;
+     Try
+         Lista.Add('NOME.....: ' + Nome);
+         Lista.Add('SALDO....: ' + CurrToStr(Value));
+         Lista.SaveToFile(nome + '_Financeiro.txt');
+     Finally
+         Lista.Free;
+     End;
+end;
+
 procedure TPessoa.CriarFinanceiro;
 Var
     Lista : TStringList;
@@ -72,7 +87,7 @@ begin
      Lista := TStringList.Create;
      Try
          Lista.Add('NOME.....: ' + Nome);
-         //Lista.Add('SALDO....: ' + CurrToStr(Saldo));
+         Lista.Add('SALDO....: ' + '1000');
          Lista.SaveToFile(nome + '_Financeiro.txt');
      Finally
          Lista.Free;
