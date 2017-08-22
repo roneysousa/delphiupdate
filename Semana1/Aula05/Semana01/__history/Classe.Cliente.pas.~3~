@@ -1,0 +1,13 @@
+unit Classe.Cliente;
+
+interface
+
+uses Classe.Pessoa;
+
+Type
+    TCliente = class(TPessoa)
+    end;
+
+implementation
+
+end.

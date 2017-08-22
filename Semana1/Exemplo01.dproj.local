@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2016/06/03 18:24:44.000.477,=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/08/09 17:22:54.000.938,=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2016/10/31 17:47:27.000.928,=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/02/24 16:48:01.000.701,=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/03/03 16:33:21.000.869,=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/03/08 14:08:46.000.518,=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/03/08 14:08:47.000.828,=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\ServerMethodsUnit1.pas</Transaction>
+    <Transaction>2017/03/08 14:08:54.000.125,=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\ServerContainerUnit1.pas</Transaction>
+    <Transaction>2017/05/29 15:13:54.000.392,=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/05/30 08:35:58.000.149,=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/18 13:35:17.000.382,=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/18 13:36:51.000.474,D:\Roney\Delphi\DelphiUpdate\Semana1\untMainExem01.pas=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/08/18 13:36:51.000.474,D:\Roney\Delphi\DelphiUpdate\Semana1\untMainExem01.fmx=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Unit1.fmx</Transaction>
+    <Transaction>2017/08/18 13:36:59.000.466,D:\Roney\Delphi\DelphiUpdate\Semana1\Exemplo01.dproj=C:\Users\ASUS\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2017/08/18 13:40:11.000.280,=D:\Roney\Delphi\DelphiUpdate\Semana1\ModelSupport_Exemplo01\default.txaPackage</Transaction>
+    <Transaction>2017/08/18 13:40:14.000.982,=D:\Roney\Delphi\DelphiUpdate\Semana1\ModelSupport_Exemplo01\default.txvpck</Transaction>
+    <Transaction>2017/08/18 13:40:16.000.516,=D:\Roney\Delphi\DelphiUpdate\Semana1\ModelSupport_Exemplo01\Exemplo01\default.txvpck</Transaction>
+    <Transaction>2017/08/18 13:40:17.000.499,=D:\Roney\Delphi\DelphiUpdate\Semana1\ModelSupport_Exemplo01\untMainExem01\default.txvpck</Transaction>
+    <Transaction>2017/08/18 13:41:31.000.313,=D:\Roney\Delphi\DelphiUpdate\Semana1\ModelSupport_Exemplo01\untMainExem01\default.txaPackage</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile iOSSimulator="iPhone5" Android="Android_42"/>
+		<PMacDev iOSSimulator="iPhone5"/>
+		<PiOS_Simulation iOSSimulator="iPhone5"/>
+	</ActiveMobileDevice>
+</BorlandProject>

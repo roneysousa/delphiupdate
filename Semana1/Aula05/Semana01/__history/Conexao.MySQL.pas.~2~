@@ -1,0 +1,21 @@
+unit Conexao.MySQL;
+
+interface
+
+Type
+    TConexaoMySQL = class
+      procedure Gravar;
+    end;
+
+
+implementation
+
+{ TConexaoSQLServer }
+
+procedure TConexaoMySQL.Gravar;
+begin
+    // Gravar no banco
+end;
+
+
+end.

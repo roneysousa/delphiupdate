@@ -1,0 +1,32 @@
+unit Cliente;
+
+interface
+
+Type
+  TCliente = class
+    private
+      Nome : String;
+      Telefone : String;
+      Endereco : String;
+      Cidade : String;
+      UF  : String;
+    public
+      constructor Create;
+      procedure CadastrarCliente;
+  end;
+
+implementation
+
+{ TCliente }
+
+procedure TCliente.CadastrarCliente;
+begin
+
+end;
+
+constructor TCliente.Create;
+begin
+     UF := 'PI';
+end;
+
+end.

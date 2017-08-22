@@ -1,0 +1,109 @@
+unit Cliente;
+
+interface
+
+uses
+  System.Classes,   System.SysUtils;
+
+Type
+  TCliente = class
+    private
+      FDataNascimento: TDatetime;
+      FNome: String;
+      FTelefone : String;
+      FEndereco: String;
+      procedure SetDataNascimento(const Value: TDatetime);
+      procedure SetNome(const Value: String);
+      Function GetEndereco: String;
+      procedure SetEndereco(const Value: String);
+    public
+
+      Cidade   : String;
+      UF       : String;
+      Saldo    : Currency;
+      constructor Create;
+      destructor Destroy;override;
+      procedure CadastrarCliente;
+      procedure CriarFinanceiro;
+      Function Idade : Integer;
+      property Nome : String read FNome write SetNome;
+      property DataNascimento : TDatetime read FDataNascimento write SetDataNascimento;
+      property Telefone : String read FTelefone write FTelefone;
+      property Endereco : String read GetEndereco write SetEndereco;
+  end;
+
+implementation
+
+{ TCliente }
+
+procedure TCliente.CadastrarCliente;
+Var
+    Lista : TStringList;
+begin
+     Lista := TStringList.Create;
+     Try
+         Lista.Add('NOME.....: ' + Nome);
+         Lista.Add('TELEFONE.: ' + Telefone);
+         Lista.Add('ENDEREÇO.: ' + Endereco);
+         Lista.Add('CIDADE...: ' + Cidade);
+         Lista.Add('UF.......: ' + UF);
+         Lista.SaveToFile(Nome + '_Cliente.txt');
+     Finally
+         Lista.Free;
+     End;
+end;
+
+constructor TCliente.Create;
+begin
+     UF    := 'PI';
+     Saldo := 1000;
+end;
+
+procedure TCliente.CriarFinanceiro;
+Var
+    Lista : TStringList;
+begin
+     Lista := TStringList.Create;
+     Try
+         Lista.Add('NOME.....: ' + Nome);
+         Lista.Add('SALDO....: ' + CurrToStr(Saldo));
+         Lista.SaveToFile(nome + '_Financeiro.txt');
+     Finally
+         Lista.Free;
+     End;
+end;
+
+destructor TCliente.Destroy;
+begin
+
+  inherited;
+end;
+
+Function TCliente.GetEndereco: String;
+begin
+     Result := FEndereco + ' | '+ Cidade + ' | Brasil';
+end;
+
+function TCliente.Idade: Integer;
+begin
+     Result := Trunc((Now - FDataNascimento) / 365.25);
+end;
+
+procedure TCliente.SetDataNascimento(const Value: TDatetime);
+begin
+     FDataNascimento := Value;
+end;
+
+procedure TCliente.SetEndereco(const Value: String);
+begin
+   FEndereco := Value;
+end;
+
+procedure TCliente.SetNome(const Value: String);
+begin
+    if Value = '' then
+      raise Exception.Create('Nome não pode ser vazio!!!');
+    FNome := Value;
+end;
+
+end.
