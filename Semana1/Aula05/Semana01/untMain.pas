@@ -26,9 +26,11 @@ type
     procedure Button5Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
   private
+
     { Private declarations }
   public
     { Public declarations }
+
   end;
 
 var
@@ -143,5 +145,7 @@ begin
            FrmPadrao2.Free;
      End;
 end;
+
+
 
 end.

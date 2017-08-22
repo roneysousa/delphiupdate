@@ -9,6 +9,7 @@ object FrmPadrao: TFrmPadrao
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
+  OnMouseDown = FormMouseDown
   DesignerMasterStyle = 0
   object Layout1: TLayout
     Align = Top
@@ -3241,5 +3242,11 @@ object FrmPadrao: TFrmPadrao
       end>
     Left = 488
     Top = 105
+  end
+  object Label2: TLabel
+    Position.X = 504.000000000000000000
+    Position.Y = 376.000000000000000000
+    TextSettings.HorzAlign = Trailing
+    Text = 'Label2'
   end
 end
