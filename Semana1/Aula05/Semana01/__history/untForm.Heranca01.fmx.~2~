@@ -1,9 +1,0 @@
-inherited FrmPadrao1: TFrmPadrao1
-  Caption = 'FrmPadrao1'
-  DesignerMasterStyle = 0
-  inherited Layout1: TLayout
-    inherited Label1: TLabel
-      TextSettings.Font.StyleExt = {00070000000000000004000000}
-    end
-  end
-end
