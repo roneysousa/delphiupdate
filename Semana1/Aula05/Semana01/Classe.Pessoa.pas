@@ -6,8 +6,8 @@ uses
   System.Classes, System.SysUtils, Interfaces;
 
 Type
-  TEventMemo = procedure (Value : String) of object;
-
+  TEventMemo   = procedure (Value : String) of object;
+  TNotifyEvent = procedure(Sender : TObject) of object;
 
   TPessoa = class
     strict private
@@ -24,9 +24,11 @@ Type
       procedure SetEndereco(const Value: String);
   private
     FEventMemo: TEventMemo;
+    FOnClick: TNotifyEvent;
     procedure SetCidade(const Value: String);
     procedure SetUF(const Value: String);
     procedure SetEventMemo(const Value: TEventMemo);
+    procedure SetOnClick(const Value: TNotifyEvent);
     public
       constructor Create(aConexao : IConexao); virtual;
       destructor Destroy;override;
@@ -35,6 +37,7 @@ Type
       procedure Cadastrar;
       procedure CriarFinanceiro;  overload;
       procedure CriarFinanceiro(Value : Currency); overload;
+      procedure OnEvCadastro;
       property Nome : String read FNome write SetNome;
       property DataNascimento : TDatetime read FDataNascimento write SetDataNascimento;
       property Telefone : String read FTelefone write FTelefone;
@@ -42,6 +45,7 @@ Type
       property Cidade : String read FCidade write SetCidade;
       property UF : String read FUF write SetUF;
       property EventMgs : TEventMemo read FEventMemo write SetEventMemo;
+      property OnCadastro  : TNotifyEvent read FOnClick write SetOnClick;
   end;
 
 implementation
@@ -61,7 +65,9 @@ begin
          Lista.Add('UF.......: ' + UF);
          Lista.SaveToFile(Nome + '_Cliente.txt');
          Conexao.Gravar;
-         EventMgs(Nome + ' Cadastrado com Sucesso');
+         //EventMgs(Nome + ' Cadastrado com Sucesso');
+         // OnCadastro(Self);
+         OnEvCadastro;
      Finally
          Lista.Free;
      End;
@@ -118,6 +124,12 @@ begin
      Result := Trunc((Now - FDataNascimento) / 365.25);
 end;
 
+procedure TPessoa.OnEvCadastro;
+begin
+    if Assigned(OnCadastro) then
+      OnCadastro(self);
+end;
+
 procedure TPessoa.SetCidade(const Value: String);
 begin
   FCidade := Value;
@@ -145,6 +157,11 @@ begin
     FNome := Value;
 end;
 
+
+procedure TPessoa.SetOnClick(const Value: TNotifyEvent);
+begin
+  FOnClick := Value;
+end;
 
 procedure TPessoa.SetUF(const Value: String);
 begin
