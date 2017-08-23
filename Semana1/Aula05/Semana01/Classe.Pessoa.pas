@@ -3,38 +3,45 @@ unit Classe.Pessoa;
 interface
 
 uses
-  System.Classes,   System.SysUtils, Interfaces;
+  System.Classes, System.SysUtils, Interfaces;
 
 Type
+  TEventMemo = procedure (Value : String) of object;
+
+
   TPessoa = class
     strict private
+      Conexao   : IConexao;
       FDataNascimento: TDatetime;
-      FNome: String;
+      FNome     : String;
       FTelefone : String;
-      FEndereco: String;
+      FEndereco : String;
+      FCidade   : String;
+      FUF       : String;
       procedure SetDataNascimento(const Value: TDatetime);
       procedure SetNome(const Value: String);
       Function GetEndereco: String;
       procedure SetEndereco(const Value: String);
+  private
+    FEventMemo: TEventMemo;
+    procedure SetCidade(const Value: String);
+    procedure SetUF(const Value: String);
+    procedure SetEventMemo(const Value: TEventMemo);
     public
-      Cidade   : String;
-      UF       : String;
-      Conexao  : IConexao;
       constructor Create(aConexao : IConexao); virtual;
       destructor Destroy;override;
+      function Tipo : String; virtual; abstract;
+      Function Idade : Integer;
       procedure Cadastrar;
       procedure CriarFinanceiro;  overload;
       procedure CriarFinanceiro(Value : Currency); overload;
-      Function Idade : Integer;
       property Nome : String read FNome write SetNome;
       property DataNascimento : TDatetime read FDataNascimento write SetDataNascimento;
       property Telefone : String read FTelefone write FTelefone;
       property Endereco : String read GetEndereco write SetEndereco;
-      function Tipo : String; virtual; abstract;
-  end;
-
-  TMyComp = class(TComponent)
-    constructor Create(AOwner : TComponent); override;
+      property Cidade : String read FCidade write SetCidade;
+      property UF : String read FUF write SetUF;
+      property EventMgs : TEventMemo read FEventMemo write SetEventMemo;
   end;
 
 implementation
@@ -53,8 +60,8 @@ begin
          Lista.Add('CIDADE...: ' + Cidade);
          Lista.Add('UF.......: ' + UF);
          Lista.SaveToFile(Nome + '_Cliente.txt');
-
          Conexao.Gravar;
+         EventMgs(Nome + ' Cadastrado com Sucesso');
      Finally
          Lista.Free;
      End;
@@ -75,6 +82,7 @@ begin
          Lista.Add('NOME.....: ' + Nome);
          Lista.Add('SALDO....: ' + CurrToStr(Value));
          Lista.SaveToFile(nome + '_Financeiro.txt');
+         EventMgs(Nome + ' Cadastrado o Financeiro com Sucesso');
      Finally
          Lista.Free;
      End;
@@ -89,6 +97,7 @@ begin
          Lista.Add('NOME.....: ' + Nome);
          Lista.Add('SALDO....: ' + '1000');
          Lista.SaveToFile(nome + '_Financeiro.txt');
+         EventMgs(Nome + ' Cadastrado o Financeiro com Sucesso');
      Finally
          Lista.Free;
      End;
@@ -109,6 +118,11 @@ begin
      Result := Trunc((Now - FDataNascimento) / 365.25);
 end;
 
+procedure TPessoa.SetCidade(const Value: String);
+begin
+  FCidade := Value;
+end;
+
 procedure TPessoa.SetDataNascimento(const Value: TDatetime);
 begin
      FDataNascimento := Value;
@@ -119,6 +133,11 @@ begin
    FEndereco := Value;
 end;
 
+procedure TPessoa.SetEventMemo(const Value: TEventMemo);
+begin
+  FEventMemo := Value;
+end;
+
 procedure TPessoa.SetNome(const Value: String);
 begin
     if Value = '' then
@@ -126,11 +145,10 @@ begin
     FNome := Value;
 end;
 
-{ TMyComp }
 
-constructor TMyComp.Create(AOwner: TComponent);
+procedure TPessoa.SetUF(const Value: String);
 begin
-     Inherited Create(AOwner);
+  FUF := Value;
 end;
 
 end.

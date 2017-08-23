@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
   FMX.Controls.Presentation, FMX.StdCtrls, FMX.DateTimeCtrls, FMX.Edit,
-  FMX.ListBox, Classe.Animal;
+  FMX.ListBox, Classe.Animal, FMX.ScrollBox, FMX.Memo;
 
 type
   TForm1 = class(TForm)
@@ -19,6 +19,8 @@ type
     Button4: TButton;
     Button5: TButton;
     Button6: TButton;
+    Memo1: TMemo;
+    Label1: TLabel;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -26,8 +28,9 @@ type
     procedure Button5Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
   private
-
     { Private declarations }
+    procedure ExibeMensagemMemo(Value : String);
+    procedure ExibeMensagemLabel(Value : String);
   public
     { Public declarations }
 
@@ -52,6 +55,8 @@ begin
      try
           With objCliente do
           begin
+               // EventMemo := ExibeMensagemMemo;
+               EventMgs := ExibeMensagemLabel;
                Nome     := 'Roney';
                Telefone := '8830-0544';
                Endereco := 'QUADRA 337 CASA 16, DIRCEU II';
@@ -61,8 +66,8 @@ begin
                Cadastrar;
                CriarFinanceiro;
                //
-               ShowMessage('Idade : ' + InttoStr(Idade));
-               ShowMessage('Logradouro : ' + Endereco);
+               {ShowMessage('Idade : ' + InttoStr(Idade));
+               ShowMessage('Logradouro : ' + Endereco);}
           end;
      finally
           objCliente.Free;
@@ -77,6 +82,7 @@ begin
      try
           With objFornecedor do
           begin
+               EventMgs := ExibeMensagemMemo;
                Nome     := 'Erdemann';
                RazaoSocial := 'oneSupersonic';
                Telefone := '8830-0544';
@@ -86,8 +92,8 @@ begin
                Cadastrar;
                CriarFinanceiro(6000);
                //
-               ShowMessage('Idade : ' + InttoStr(Idade));
-               ShowMessage('Logradouro : ' + Endereco);
+               {ShowMessage('Idade : ' + InttoStr(Idade));
+               ShowMessage('Logradouro : ' + Endereco);}
           end;
      finally
           objFornecedor.Free;
@@ -147,5 +153,15 @@ begin
 end;
 
 
+
+procedure TForm1.ExibeMensagemLabel(Value: String);
+begin
+    Label1.Text := Value;
+end;
+
+procedure TForm1.ExibeMensagemMemo(Value: String);
+begin
+     Memo1.Lines.Add(Value);
+end;
 
 end.
