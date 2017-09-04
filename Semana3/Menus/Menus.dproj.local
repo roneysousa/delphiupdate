@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2017/04/22 14:28:49.000.203,=C:\Users\roney\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/04/22 14:29:00.000.972,=C:\Users\roney\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/05/28 11:32:09.000.608,=C:\Users\roney\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/09/01 10:49:30.000.764,=C:\Users\roney\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/09/02 23:18:03.000.201,=C:\Users\roney\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/09/02 23:23:22.000.476,=C:\Users\roney\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/09/02 23:26:25.000.429,E:\desenvolvimento\Delphi\DelphiUpdate\delphiupdate\Semana3\Menus\view\Menus.View.Principal.fmx=C:\Users\roney\Documents\Embarcadero\Studio\Projects\Unit1.fmx</Transaction>
+    <Transaction>2017/09/02 23:26:25.000.429,E:\desenvolvimento\Delphi\DelphiUpdate\delphiupdate\Semana3\Menus\view\Menus.View.Principal.pas=C:\Users\roney\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2017/09/02 23:26:30.000.120,E:\desenvolvimento\Delphi\DelphiUpdate\delphiupdate\Semana3\Menus\Menus.dproj=C:\Users\roney\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2017/09/02 23:28:16.000.577,=E:\desenvolvimento\Delphi\DelphiUpdate\delphiupdate\Semana3\Menus\Unit1.pas</Transaction>
+    <Transaction>2017/09/02 23:28:38.000.593,E:\desenvolvimento\Delphi\DelphiUpdate\delphiupdate\Semana3\Menus\controller\Menus.Controler.Interfaces.pas=E:\desenvolvimento\Delphi\DelphiUpdate\delphiupdate\Semana3\Menus\Unit1.pas</Transaction>
+    <Transaction>2017/09/02 23:29:17.000.638,=E:\desenvolvimento\Delphi\DelphiUpdate\delphiupdate\Semana3\Menus\Unit1.pas</Transaction>
+    <Transaction>2017/09/02 23:29:43.000.427,E:\desenvolvimento\Delphi\DelphiUpdate\delphiupdate\Semana3\Menus\model\Menus.Model.Interfaces.pas=E:\desenvolvimento\Delphi\DelphiUpdate\delphiupdate\Semana3\Menus\Unit1.pas</Transaction>
+    <Transaction>2017/09/02 23:37:25.000.674,=E:\desenvolvimento\Delphi\DelphiUpdate\delphiupdate\Semana3\Menus\Unit1.pas</Transaction>
+    <Transaction>2017/09/02 23:38:28.000.474,E:\desenvolvimento\Delphi\DelphiUpdate\delphiupdate\Semana3\Menus\controller\Menus.Controler.ListaBox.Itens.Factory.pas=E:\desenvolvimento\Delphi\DelphiUpdate\delphiupdate\Semana3\Menus\Unit1.pas</Transaction>
+    <Transaction>2017/09/02 23:38:46.000.319,E:\desenvolvimento\Delphi\DelphiUpdate\delphiupdate\Semana3\Menus\controller\Menus.Controller.Interfaces.pas=E:\desenvolvimento\Delphi\DelphiUpdate\delphiupdate\Semana3\Menus\controller\Menus.Controler.Interfaces.pas</Transaction>
+    <Transaction>2017/09/02 23:38:52.000.816,E:\desenvolvimento\Delphi\DelphiUpdate\delphiupdate\Semana3\Menus\controller\Menus.Controller.ListaBox.Itens.Factory.pas=E:\desenvolvimento\Delphi\DelphiUpdate\delphiupdate\Semana3\Menus\controller\Menus.Controler.ListaBox.Itens.Factory.pas</Transaction>
+    <Transaction>2017/09/02 23:43:38.000.401,=E:\desenvolvimento\Delphi\DelphiUpdate\delphiupdate\Semana3\Menus\Unit1.pas</Transaction>
+    <Transaction>2017/09/02 23:44:02.000.849,E:\desenvolvimento\Delphi\DelphiUpdate\delphiupdate\Semana3\Menus\controller\Menus.Controller.ListaBox.Factory.pas=E:\desenvolvimento\Delphi\DelphiUpdate\delphiupdate\Semana3\Menus\Unit1.pas</Transaction>
+    <Transaction>2017/09/03 00:15:57.000.439,=E:\desenvolvimento\Delphi\DelphiUpdate\delphiupdate\Semana3\Menus\Unit1.pas</Transaction>
+    <Transaction>2017/09/03 00:16:16.000.073,E:\desenvolvimento\Delphi\DelphiUpdate\delphiupdate\Semana3\Menus\controller\Menus.Controller.ListaBox.Itens.Default.pas=E:\desenvolvimento\Delphi\DelphiUpdate\delphiupdate\Semana3\Menus\Unit1.pas</Transaction>
+    <Transaction>2017/09/03 23:41:16.000.370,=E:\desenvolvimento\Delphi\DelphiUpdate\delphiupdate\Semana3\Menus\Unit1.pas</Transaction>
+    <Transaction>2017/09/03 23:42:39.000.013,E:\desenvolvimento\Delphi\DelphiUpdate\delphiupdate\Semana3\Menus\Unit1.pas=E:\desenvolvimento\Delphi\DelphiUpdate\delphiupdate\Semana3\Menus\controller\Menus.Controller.ListaBox.Default.pas</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile iOSSimulator="iPhone5" Android="AVD_for_Nexus_4_by_Google"/>
+		<PiOSSimulador iOSSimulator="iPhone5"/>
+	</ActiveMobileDevice>
+</BorlandProject>
