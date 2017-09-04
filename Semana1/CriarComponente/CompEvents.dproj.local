@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2017/08/25 00:02:54.000.074,=rtl.dcp</Transaction>
+    <Transaction>2017/08/25 00:03:38.000.116,E:\desenvolvimento\Delphi\DelphiUpdate\delphiupdate\Semana1\CriarComponente\CompEvents.dproj=C:\Users\roney\Documents\Embarcadero\Studio\Projects\Package1.dproj</Transaction>
+    <Transaction>2017/08/25 00:03:54.000.187,=E:\desenvolvimento\Delphi\DelphiUpdate\delphiupdate\Semana1\CriarComponente\Unit1.pas</Transaction>
+    <Transaction>2017/08/25 00:04:08.000.563,E:\desenvolvimento\Delphi\DelphiUpdate\delphiupdate\Semana1\CriarComponente\Principal.pas=E:\desenvolvimento\Delphi\DelphiUpdate\delphiupdate\Semana1\CriarComponente\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>
