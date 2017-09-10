@@ -5,12 +5,14 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Layouts,
-  FMX.Controls.Presentation, FMX.StdCtrls;
+  FMX.Controls.Presentation, FMX.StdCtrls,
+  Data.DB, FireDAC.Comp.Client ;
 
 type
-  TForm1 = class(TForm)
+  TFrmMain = class(TForm)
     StatusBar1: TStatusBar;
     Layout1: TLayout;
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -18,10 +20,17 @@ type
   end;
 
 var
-  Form1: TForm1;
+  FrmMain: TFrmMain;
 
 implementation
 
 {$R *.fmx}
+
+uses Menus.Controller.ListaBox.Factory;
+
+procedure TFrmMain.FormCreate(Sender: TObject);
+begin
+    TControllerListaBoxFactory.New.Principal(Layout1).Exibir;
+end;
 
 end.

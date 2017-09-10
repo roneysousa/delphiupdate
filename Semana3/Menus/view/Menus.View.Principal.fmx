@@ -1,13 +1,14 @@
-object Form1: TForm1
+object FrmMain: TFrmMain
   Left = 0
   Top = 0
-  Caption = 'Form1'
+  Caption = 'MVC'
   ClientHeight = 480
   ClientWidth = 640
   Position = ScreenCenter
   FormFactor.Width = 320
   FormFactor.Height = 480
   FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
   DesignerMasterStyle = 0
   object StatusBar1: TStatusBar
     Position.Y = 458.000000000000000000

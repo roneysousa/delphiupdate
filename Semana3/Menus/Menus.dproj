@@ -282,6 +282,9 @@
         <DCC_RemoteDebug>true</DCC_RemoteDebug>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <DCC_DcuOutput>.\dcu</DCC_DcuOutput>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppEnableHighDPI>true</AppEnableHighDPI>
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
@@ -297,6 +300,9 @@
         <DCC_DebugInformation>0</DCC_DebugInformation>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <DCC_DcuOutput>.\dcu</DCC_DcuOutput>
+        <VerInfo_Locale>1033</VerInfo_Locale>
         <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
         <AppEnableHighDPI>true</AppEnableHighDPI>
     </PropertyGroup>
@@ -309,15 +315,42 @@
             <MainSource>MainSource</MainSource>
         </DelphiCompile>
         <DCCReference Include="view\Menus.View.Principal.pas">
-            <Form>Form1</Form>
+            <Form>FrmMain</Form>
             <FormType>fmx</FormType>
         </DCCReference>
-        <DCCReference Include="controller\Menus.Controller.Interfaces.pas"/>
-        <DCCReference Include="model\Menus.Model.Interfaces.pas"/>
-        <DCCReference Include="controller\Menus.Controller.ListaBox.Itens.Factory.pas"/>
-        <DCCReference Include="controller\Menus.Controller.ListaBox.Factory.pas"/>
-        <DCCReference Include="controller\Menus.Controller.ListaBox.Itens.Default.pas"/>
-        <DCCReference Include="controller\Menus.Controller.ListaBox.Default.pas"/>
+        <DCCReference Include="controller\Menus\Menus.Controller.ListBox.Interfaces.pas"/>
+        <DCCReference Include="controller\Menus\Menus.Controller.ListaBox.Itens.Factory.pas"/>
+        <DCCReference Include="controller\Menus\Menus.Controller.ListaBox.Factory.pas"/>
+        <DCCReference Include="controller\Menus\Menus.Controller.ListaBox.Itens.Default.pas"/>
+        <DCCReference Include="controller\Menus\Menus.Controller.ListaBox.Default.pas"/>
+        <DCCReference Include="controller\Menus\Menus.Controller.ListaBox.Itens.Produto.pas"/>
+        <DCCReference Include="controller\Menus\Menus.Controller.ListaBox.Principal.pas"/>
+        <DCCReference Include="controller\Menus\Menus.Controller.ListBox.Produtos.pas"/>
+        <DCCReference Include="controller\Menus\Menus.Controller.ListaBox.Itens.Cliente.pas"/>
+        <DCCReference Include="controller\Menus\Menus.Controller.ListBox.Clientes.pas"/>
+        <DCCReference Include="view\Menus.View.Produtos.pas">
+            <Form>FrmProduto</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="view\Menus.View.Clientes.pas">
+            <Form>FrmCliente</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="controller\Forms\Menus.Controller.Forms.Default.pas"/>
+        <DCCReference Include="model\Conexoes\Menu.Model.Conexoes.Interfaces.pas"/>
+        <DCCReference Include="model\Conexoes\Menu.Model.Conexoes.ConexaoFireDac.pas"/>
+        <DCCReference Include="model\Conexoes\Menu.Model.Conexoes.TableFireDac.pas"/>
+        <DCCReference Include="model\Conexoes\Menu.Model.Conexoes.Factory.Conexao.pas"/>
+        <DCCReference Include="model\Conexoes\Menu.Model.Conexoes.Factory.DataSet.pas"/>
+        <DCCReference Include="model\Conexoes\Entity\Menus.Model.Entity.Interfaces.pas"/>
+        <DCCReference Include="model\Conexoes\Entity\Menus.Model.Entity.Produtos.pas"/>
+        <DCCReference Include="model\Conexoes\Entity\Menus.Model.Entity.Factory.pas"/>
+        <DCCReference Include="controller\Conexoes\Menus.Controller.Conexoes.Interfaces.pas"/>
+        <DCCReference Include="controller\Conexoes\Menus.Controller.Conexoes.Factory.Conexao.pas"/>
+        <DCCReference Include="controller\Conexoes\Menus.Controller.Conexoes.Factory.DataSet.pas"/>
+        <DCCReference Include="controller\Entity\Menus.Controller.Entity.Interfaces.pas"/>
+        <DCCReference Include="controller\Entity\Menus.Controller.Entity.Produtos.pas"/>
+        <DCCReference Include="controller\Entity\Menus.Controller.Entity.Factory.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
@@ -338,6 +371,10 @@
                 <Source>
                     <Source Name="MainSource">Menus.dpr</Source>
                 </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k240.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp240.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
             </Delphi.Personality>
             <Deployment Version="3">
                 <DeployFile LocalName="$(BDS)\Redist\osx32\libcgunwind.1.0.dylib" Class="DependencyModule">

@@ -1,0 +1,37 @@
+object FrmCliente: TFrmCliente
+  Left = 0
+  Top = 0
+  Caption = 'Form3'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object ToolBar1: TToolBar
+    Size.Width = 640.000000000000000000
+    Size.Height = 40.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object Label1: TLabel
+      Align = Top
+      StyledSettings = [Family, FontColor]
+      Size.Width = 640.000000000000000000
+      Size.Height = 25.000000000000000000
+      Size.PlatformDefault = False
+      TextSettings.Font.Size = 18.000000000000000000
+      TextSettings.Font.StyleExt = {00070000000000000004000000}
+      TextSettings.HorzAlign = Center
+      Text = 'Cliente'
+    end
+  end
+  object Layout1: TLayout
+    Align = Left
+    Position.Y = 40.000000000000000000
+    Size.Width = 185.000000000000000000
+    Size.Height = 440.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+  end
+end
