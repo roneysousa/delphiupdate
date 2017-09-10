@@ -34,7 +34,8 @@ uses
   Menus.Controller.ListBox.Itens.Fornecedor in 'controller\Menus\Menus.Controller.ListBox.Itens.Fornecedor.pas',
   Menus.View.Fornecedor in 'view\Menus.View.Fornecedor.pas' {frmFornecedor},
   Menus.Model.Entity.Clientes in 'model\Conexoes\Entity\Menus.Model.Entity.Clientes.pas',
-  Menus.Controller.Entity.Clientes in 'controller\Entity\Menus.Controller.Entity.Clientes.pas';
+  Menus.Controller.Entity.Clientes in 'controller\Entity\Menus.Controller.Entity.Clientes.pas',
+  Menus.Model.Conexoes.Zeos.Conexao in 'model\Conexoes\Zeos\Menus.Model.Conexoes.Zeos.Conexao.pas';
 
 {$R *.res}
 
