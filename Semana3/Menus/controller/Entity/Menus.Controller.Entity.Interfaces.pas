@@ -14,6 +14,7 @@ type
   iControllerEntityFactory = Interface
     ['{60586140-BEF2-41AF-BD4D-F3DFCDDCEB4E}']
     function Produto: iControllerEntity;
+    function Cliente: iControllerEntity;
   End;
 
 implementation

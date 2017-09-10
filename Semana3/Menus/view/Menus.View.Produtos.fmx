@@ -2,8 +2,8 @@ object FrmProduto: TFrmProduto
   Left = 0
   Top = 0
   Caption = 'Form2'
-  ClientHeight = 480
-  ClientWidth = 640
+  ClientHeight = 511
+  ClientWidth = 690
   Position = ScreenCenter
   FormFactor.Width = 320
   FormFactor.Height = 480
@@ -11,14 +11,14 @@ object FrmProduto: TFrmProduto
   OnCreate = FormCreate
   DesignerMasterStyle = 0
   object ToolBar1: TToolBar
-    Size.Width = 640.000000000000000000
+    Size.Width = 690.000000000000000000
     Size.Height = 40.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
     object Label1: TLabel
       Align = Top
       StyledSettings = [Family, FontColor]
-      Size.Width = 640.000000000000000000
+      Size.Width = 690.000000000000000000
       Size.Height = 25.000000000000000000
       Size.PlatformDefault = False
       TextSettings.Font.Size = 18.000000000000000000
@@ -29,9 +29,9 @@ object FrmProduto: TFrmProduto
   end
   object Layout1: TLayout
     Align = Left
-    Position.Y = 40.000000000000000000
-    Size.Width = 185.000000000000000000
-    Size.Height = 440.000000000000000000
+    Position.Y = 153.000000000000000000
+    Size.Width = 153.000000000000000000
+    Size.Height = 358.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 1
   end
@@ -39,29 +39,81 @@ object FrmProduto: TFrmProduto
     Align = Client
     CanFocus = True
     ClipChildren = True
-    Size.Width = 455.000000000000000000
-    Size.Height = 440.000000000000000000
+    Size.Width = 537.000000000000000000
+    Size.Height = 358.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 4
-    Viewport.Width = 451.000000000000000000
-    Viewport.Height = 415.000000000000000000
+    Viewport.Width = 533.000000000000000000
+    Viewport.Height = 333.000000000000000000
+  end
+  object Layout2: TLayout
+    Align = Top
+    Position.Y = 40.000000000000000000
+    Size.Width = 690.000000000000000000
+    Size.Height = 113.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 8
+    object EditCodigo: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 0
+      Position.X = 16.000000000000000000
+      Position.Y = 19.000000000000000000
+    end
+    object EditDescricao: TEdit
+      Touch.InteractiveGestures = [LongTap, DoubleTap]
+      TabOrder = 1
+      Position.X = 16.000000000000000000
+      Position.Y = 48.000000000000000000
+      Size.Width = 345.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+    end
+    object Button1: TButton
+      Position.X = 320.000000000000000000
+      Position.Y = 80.000000000000000000
+      TabOrder = 2
+      Text = 'Novo'
+      OnClick = Button1Click
+    end
+    object Button2: TButton
+      Position.X = 408.000000000000000000
+      Position.Y = 80.000000000000000000
+      TabOrder = 3
+      Text = 'Editar'
+      OnClick = Button2Click
+    end
+    object Button3: TButton
+      Position.X = 512.000000000000000000
+      Position.Y = 80.000000000000000000
+      TabOrder = 4
+      Text = 'Excluir'
+      OnClick = Button3Click
+    end
+    object Button4: TButton
+      Position.X = 600.000000000000000000
+      Position.Y = 80.000000000000000000
+      TabOrder = 5
+      Text = 'Salvar'
+      OnClick = Button4Click
+    end
   end
   object dsListaDados: TDataSource
     AutoEdit = False
-    Left = 200
-    Top = 56
+    OnDataChange = dsListaDadosDataChange
+    Left = 40
+    Top = 264
   end
   object BindSourceDB1: TBindSourceDB
     DataSource = dsListaDados
     ScopeMappings = <>
-    Left = 112
-    Top = 56
+    Left = 40
+    Top = 208
   end
   object BindingsList1: TBindingsList
     Methods = <>
     OutputConverters = <>
-    Left = 28
-    Top = 53
+    Left = 36
+    Top = 149
     object LinkGridToDataSourceBindSourceDB1: TLinkGridToDataSource
       Category = 'Quick Bindings'
       DataSource = BindSourceDB1

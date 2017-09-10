@@ -23,6 +23,7 @@ begin
      try
           newForm := (objFMX.Create(nil) as TCustomForm);
           try
+               newForm.Position := TFormPosition.ScreenCenter;
                newForm.ShowModal;
           finally
                newForm.free;

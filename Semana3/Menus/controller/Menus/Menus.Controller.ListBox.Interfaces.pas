@@ -25,6 +25,7 @@ type
     function Default : iControllerListBoxItensDefault;
     Function Produto : iControllerListBoxItemForm;
     Function Cliente : iControllerListBoxItemForm;
+    function Fornecedor : iControllerListBoxItemForm;
   end;
 
   iControllerListBoxFactory = interface

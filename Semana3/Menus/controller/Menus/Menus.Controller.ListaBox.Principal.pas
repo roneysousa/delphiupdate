@@ -39,6 +39,7 @@ begin
        .Default(FContainer)
        .AddItem(TControllerListaBoxItensFactory.New.Produto.Show)
        .AddItem(TControllerListaBoxItensFactory.New.Cliente.Show)
+       .AddItem(TControllerListaBoxItensFactory.New.Fornecedor.Show)
        .Exibir;
 end;
 

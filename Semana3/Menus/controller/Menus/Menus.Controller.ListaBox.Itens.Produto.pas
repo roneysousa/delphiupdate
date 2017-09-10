@@ -3,7 +3,7 @@ unit Menus.Controller.ListaBox.Itens.Produto;
 interface
 
 uses
-  Menus.Controller.ListBox.Interfaces, FMX.Types;
+  Menus.Controller.ListBox.Interfaces, FMX.Types, Menus.Controller.Forms.Default;
 
 Type
   TControllerListaBoxItensProduto = class(TInterfacedObject, iControllerListBoxItemForm)
@@ -17,7 +17,7 @@ Type
 
 implementation
 
-uses Menus.Controller.ListaBox.Itens.Factory, Menus.Controller.Forms.Default;
+uses Menus.Controller.ListaBox.Itens.Factory;
 
 { TControllerListaBoxItensProduto }
 

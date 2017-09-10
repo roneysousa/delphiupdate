@@ -351,6 +351,13 @@
         <DCCReference Include="controller\Entity\Menus.Controller.Entity.Interfaces.pas"/>
         <DCCReference Include="controller\Entity\Menus.Controller.Entity.Produtos.pas"/>
         <DCCReference Include="controller\Entity\Menus.Controller.Entity.Factory.pas"/>
+        <DCCReference Include="controller\Menus\Menus.Controller.ListBox.Itens.Fornecedor.pas"/>
+        <DCCReference Include="view\Menus.View.Fornecedor.pas">
+            <Form>frmFornecedor</Form>
+            <FormType>fmx</FormType>
+        </DCCReference>
+        <DCCReference Include="model\Conexoes\Entity\Menus.Model.Entity.Clientes.pas"/>
+        <DCCReference Include="controller\Entity\Menus.Controller.Entity.Clientes.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

@@ -14,6 +14,7 @@ type
   iModelEntityFactory = interface
     ['{2BFFCFC5-4B25-42E4-8C01-5C39410F7CAA}']
     function Produtos(DataSet : iModelDataSet): iModelEntity;
+    function Clientes(DataSet : iModelDataSet): iModelEntity;
   end;
 
 implementation

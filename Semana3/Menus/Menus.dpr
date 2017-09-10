@@ -30,7 +30,11 @@ uses
   Menus.Controller.Conexoes.Factory.DataSet in 'controller\Conexoes\Menus.Controller.Conexoes.Factory.DataSet.pas',
   Menus.Controller.Entity.Interfaces in 'controller\Entity\Menus.Controller.Entity.Interfaces.pas',
   Menus.Controller.Entity.Produtos in 'controller\Entity\Menus.Controller.Entity.Produtos.pas',
-  Menus.Controller.Entity.Factory in 'controller\Entity\Menus.Controller.Entity.Factory.pas';
+  Menus.Controller.Entity.Factory in 'controller\Entity\Menus.Controller.Entity.Factory.pas',
+  Menus.Controller.ListBox.Itens.Fornecedor in 'controller\Menus\Menus.Controller.ListBox.Itens.Fornecedor.pas',
+  Menus.View.Fornecedor in 'view\Menus.View.Fornecedor.pas' {frmFornecedor},
+  Menus.Model.Entity.Clientes in 'model\Conexoes\Entity\Menus.Model.Entity.Clientes.pas',
+  Menus.Controller.Entity.Clientes in 'controller\Entity\Menus.Controller.Entity.Clientes.pas';
 
 {$R *.res}
 

@@ -24,7 +24,7 @@ begin
      Result := TModelConexaoFactoryConexoes.New
                   .ConexaoFiredac
                   .Parametros
-                    .Database('pluspdv_nfe')
+                    .Database('diversos')
                     .UserName('postgres')
                     .Passaword('654321')
                     .DriverID('PG')

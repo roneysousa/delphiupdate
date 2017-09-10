@@ -2,7 +2,8 @@ unit Menus.Controller.ListaBox.Itens.Factory;
 
 interface
 
-uses Menus.Controller.ListBox.Interfaces, Menus.Controller.ListaBox.Itens.Default;
+uses Menus.Controller.ListBox.Interfaces, Menus.Controller.ListaBox.Itens.Default
+;
 
 Type
   TControllerListaBoxItensFactory = class(TInterfacedObject, iControllerListBoxItensFactory)
@@ -12,13 +13,15 @@ Type
     function Default : iControllerListBoxItensDefault;
     Function Produto : iControllerListBoxItemForm;
     Function Cliente : iControllerListBoxItemForm;
+    function Fornecedor : iControllerListBoxItemForm;
   End;
 
 implementation
 
 uses
   Menus.Controller.ListaBox.Itens.Produto,
-  Menus.Controller.ListaBox.Itens.Cliente;
+  Menus.Controller.ListaBox.Itens.Cliente,
+  Menus.Controller.ListBox.Itens.Fornecedor;
 
 { TControllerListaBoxItensFactory }
 
@@ -43,6 +46,11 @@ begin
   inherited;
 end;
 
+function TControllerListaBoxItensFactory.Fornecedor: iControllerListBoxItemForm;
+begin
+     Result := TControllerListaBoxItensFornecedor.New;
+end;
+
 class function TControllerListaBoxItensFactory.New: iControllerListBoxItensFactory;
 begin
      Result := Self.Create;
@@ -50,7 +58,7 @@ end;
 
 function TControllerListaBoxItensFactory.Produto: iControllerListBoxItemForm;
 begin
-      Result := TControllerListaBoxItensProduto.New;
+     Result := TControllerListaBoxItensProduto.New;
 end;
 
 end.

@@ -3,7 +3,8 @@ unit Menus.Controller.Entity.Factory;
 interface
 
 uses
-  Menus.Controller.Entity.Interfaces, Menus.Controller.Entity.Produtos;
+  Menus.Controller.Entity.Interfaces, Menus.Controller.Entity.Produtos,
+  Menus.Controller.Entity.Clientes;
 
 type
   TControllerEntityFactory = class(TInterfacedObject, iControllerEntityFactory)
@@ -13,11 +14,17 @@ type
          destructor Destroy; override;
          class function New: iControllerEntityFactory;
          function Produto: iControllerEntity;
+         function Cliente: iControllerEntity;
   end;
 
 implementation
 
 { TControllerEntityFactory }
+
+function TControllerEntityFactory.Cliente: iControllerEntity;
+begin
+    Result := TControllerEntityClientes.New;
+end;
 
 constructor TControllerEntityFactory.Create;
 begin
