@@ -3,7 +3,7 @@ unit Menu.Model.Conexoes.Factory.Conexao;
 interface
 
 uses
-  Menu.Model.Conexoes.Interfaces, Menu.Model.Conexoes.ConexaoFireDac;
+  Menu.Model.Conexoes.Interfaces, Menus.Model.Conexoes.ConexaoFireDac;
 
 type
   TModelConexaoFactoryConexoes = class(TInterfacedObject, iModelFactoryConexao)

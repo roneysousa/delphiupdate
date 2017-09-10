@@ -2,7 +2,7 @@ unit Menu.Model.Conexoes.Factory.DataSet;
 
 interface
 
-uses Menu.Model.Conexoes.Interfaces, Menu.Model.Conexoes.TableFireDac;
+uses Menu.Model.Conexoes.Interfaces, Menus.Model.Conexoes.TableFireDac;
 
 type
   TModelConexaoFactoryDataSet = class(TInterfacedObject, iModelFactoryDataSet)
