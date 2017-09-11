@@ -27,7 +27,12 @@ end;
 
 function TControllerConexoesFactoryDataSet.DataSet(Conexao: iModelConexao): iModelDataSet;
 begin
-     Result := TModelConexaoFactoryDataSet.New.DataSetFiredac(Conexao);
+     {$IFDEF FIREDAC}
+      Result := TModelConexaoFactoryDataSet.New.DataSetFiredac(Conexao);
+     {$ENDIF}
+     {$IFDEF ZEOS}
+      Result := TModelConexaoFactoryDataSet.New.DataSetZeos(Conexao);
+     {$ENDIF}
 end;
 
 destructor TControllerConexoesFactoryDataSet.Destroy;

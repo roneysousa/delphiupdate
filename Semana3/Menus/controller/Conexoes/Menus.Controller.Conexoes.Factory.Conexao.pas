@@ -21,6 +21,7 @@ implementation
 
 function TControllerConexoesFactoryConexao.Conexao: iModelConexao;
 begin
+     {$IFDEF FIREDAC}
      Result := TModelConexaoFactoryConexoes.New
                   .ConexaoFiredac
                   .Parametros
@@ -32,6 +33,20 @@ begin
                     .Porta(5432)
                   .EndParametros
                   .Conectar;
+     {$ENDIF}
+     {$IFDEF ZEOS}
+     Result := TModelConexaoFactoryConexoes.New
+                  .ConexaoZeos
+                  .Parametros
+                    .Database('diversos')
+                    .UserName('postgres')
+                    .Passaword('654321')
+                    .DriverID('postgresql-9')
+                    .Server('localhost')
+                    .Porta(5432)
+                  .EndParametros
+                  .Conectar;
+     {$ENDIF}
 end;
 
 constructor TControllerConexoesFactoryConexao.Create;

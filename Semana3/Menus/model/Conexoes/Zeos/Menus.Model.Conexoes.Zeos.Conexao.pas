@@ -88,6 +88,7 @@ begin
     FConexao.Protocol := FDriverID;
     FConexao.HostName := FServer;
     FConexao.Port     := FPorta;
+    FConexao.ClientCodepage := 'UTF8';
 end;
 
 class function TModelConexaoZeos.New: iModelConexao;

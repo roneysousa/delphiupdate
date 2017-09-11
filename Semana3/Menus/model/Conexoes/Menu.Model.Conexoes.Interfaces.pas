@@ -34,11 +34,13 @@ type
   iModelFactoryConexao = interface
     ['{322E23B1-520A-4037-BE21-F8B4646C326A}']
     function ConexaoFiredac : iModelConexao;
+    function ConexaoZeos : iModelConexao;
   end;
 
   iModelFactoryDataSet = interface
     ['{A84F864F-90D1-46A1-A526-B78450076553}']
     function DataSetFiredac(Conexao : iModelConexao): iModelDataSet;
+    function DataSetZeos(Conexao : iModelConexao): iModelDataSet;
   end;
 
 implementation

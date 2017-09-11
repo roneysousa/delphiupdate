@@ -6,6 +6,9 @@ uses
     {$IFDEF FIREDAC}
     Menus.Model.Conexoes.TableFireDac,
     {$ENDIF}
+    {$IFDEF ZEOS}
+    Menus.Model.Conexoes.Zeos.DataSet,
+    {$ENDIF}
     Menu.Model.Conexoes.Interfaces ;
 
 type
@@ -16,6 +19,7 @@ type
          destructor Destroy; override;
          class function New: iModelFactoryDataSet;
          function DataSetFiredac(Conexao : iModelConexao): iModelDataSet;
+         function DataSetZeos(Conexao : iModelConexao): iModelDataSet;
   end;
 
 implementation
@@ -30,7 +34,15 @@ end;
 function TModelConexaoFactoryDataSet.DataSetFiredac(Conexao : iModelConexao): iModelDataSet;
 begin
      {$IFDEF FIREDAC}
-     Result := TModelConexoesTableFiredac.New(Conexao);
+      Result := TModelConexoesTableFiredac.New(Conexao);
+     {$ENDIF}
+end;
+
+function TModelConexaoFactoryDataSet.DataSetZeos(
+  Conexao: iModelConexao): iModelDataSet;
+begin
+     {$IFDEF ZEOS}
+      Result := TModelConexoesZeosDataSet.New(Conexao);
      {$ENDIF}
 end;
 
