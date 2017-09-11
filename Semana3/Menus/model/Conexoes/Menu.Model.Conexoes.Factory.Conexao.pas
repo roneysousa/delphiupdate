@@ -3,7 +3,10 @@ unit Menu.Model.Conexoes.Factory.Conexao;
 interface
 
 uses
-  Menu.Model.Conexoes.Interfaces, Menus.Model.Conexoes.ConexaoFireDac;
+    {$IFDEF FIREDAC}
+    Menus.Model.Conexoes.ConexaoFireDac,
+    {$ENDIF}
+   Menu.Model.Conexoes.Interfaces;
 
 type
   TModelConexaoFactoryConexoes = class(TInterfacedObject, iModelFactoryConexao)
@@ -21,7 +24,9 @@ implementation
 
 function TModelConexaoFactoryConexoes.ConexaoFiredac: iModelConexao;
 begin
-     Result := TModelConexaoFiredac.New;
+     {$IFDEF FIREDAC}
+       Result := TModelConexaoFiredac.New;
+     {$ENDIF}
 end;
 
 constructor TModelConexaoFactoryConexoes.Create;

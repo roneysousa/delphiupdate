@@ -2,7 +2,11 @@ unit Menu.Model.Conexoes.Factory.DataSet;
 
 interface
 
-uses Menu.Model.Conexoes.Interfaces, Menus.Model.Conexoes.TableFireDac;
+uses
+    {$IFDEF FIREDAC}
+    Menus.Model.Conexoes.TableFireDac,
+    {$ENDIF}
+    Menu.Model.Conexoes.Interfaces ;
 
 type
   TModelConexaoFactoryDataSet = class(TInterfacedObject, iModelFactoryDataSet)
@@ -25,7 +29,9 @@ end;
 
 function TModelConexaoFactoryDataSet.DataSetFiredac(Conexao : iModelConexao): iModelDataSet;
 begin
+     {$IFDEF FIREDAC}
      Result := TModelConexoesTableFiredac.New(Conexao);
+     {$ENDIF}
 end;
 
 destructor TModelConexaoFactoryDataSet.Destroy;

@@ -18,8 +18,10 @@ uses
   Menus.View.Clientes in 'view\Menus.View.Clientes.pas' {FrmCliente},
   Menus.Controller.Forms.Default in 'controller\Forms\Menus.Controller.Forms.Default.pas',
   Menu.Model.Conexoes.Interfaces in 'model\Conexoes\Menu.Model.Conexoes.Interfaces.pas',
-  Menus.Model.Conexoes.ConexaoFireDac in 'model\Conexoes\Firedac\Menus.Model.Conexoes.ConexaoFireDac.pas',
-  Menus.Model.Conexoes.TableFireDac in 'model\Conexoes\Firedac\Menus.Model.Conexoes.TableFireDac.pas',
+  {$IFDEF FIREDAC}
+    Menus.Model.Conexoes.ConexaoFireDac in 'model\Conexoes\Firedac\Menus.Model.Conexoes.ConexaoFireDac.pas',
+    Menus.Model.Conexoes.TableFireDac in 'model\Conexoes\Firedac\Menus.Model.Conexoes.TableFireDac.pas',
+  {$ENDIF}
   Menu.Model.Conexoes.Factory.Conexao in 'model\Conexoes\Menu.Model.Conexoes.Factory.Conexao.pas',
   Menu.Model.Conexoes.Factory.DataSet in 'model\Conexoes\Menu.Model.Conexoes.Factory.DataSet.pas',
   Menus.Model.Entity.Interfaces in 'model\Conexoes\Entity\Menus.Model.Entity.Interfaces.pas',
@@ -34,9 +36,11 @@ uses
   Menus.Controller.ListBox.Itens.Fornecedor in 'controller\Menus\Menus.Controller.ListBox.Itens.Fornecedor.pas',
   Menus.View.Fornecedor in 'view\Menus.View.Fornecedor.pas' {frmFornecedor},
   Menus.Model.Entity.Clientes in 'model\Conexoes\Entity\Menus.Model.Entity.Clientes.pas',
-  Menus.Controller.Entity.Clientes in 'controller\Entity\Menus.Controller.Entity.Clientes.pas',
-  Menus.Model.Conexoes.Zeos.Conexao in 'model\Conexoes\Zeos\Menus.Model.Conexoes.Zeos.Conexao.pas',
-  Menus.Model.Conexoes.Zeos.DataSet in 'model\Conexoes\Zeos\Menus.Model.Conexoes.Zeos.DataSet.pas';
+  {$IFDEF ZEOS}
+    Menus.Model.Conexoes.Zeos.Conexao in 'model\Conexoes\Zeos\Menus.Model.Conexoes.Zeos.Conexao.pas',
+    Menus.Model.Conexoes.Zeos.DataSet in 'model\Conexoes\Zeos\Menus.Model.Conexoes.Zeos.DataSet.pas',
+  {$ENDIF}
+  Menus.Controller.Entity.Clientes in 'controller\Entity\Menus.Controller.Entity.Clientes.pas';
 
 {$R *.res}
 
