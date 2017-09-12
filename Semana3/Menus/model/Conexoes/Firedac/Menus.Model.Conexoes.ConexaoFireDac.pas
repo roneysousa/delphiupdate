@@ -13,6 +13,7 @@ uses
 type
   TModelConexaoFiredac = class(TInterfacedObject, iModelConexao, iModelConexaoParametros)
        private
+         class var FInstance: TModelConexaoFiredac;
          FConexao          : TFDConnection;
          FDGUIxWaitCursor  : TFDGUIxWaitCursor;
          FDPhysPgDriverLink: TFDPhysPgDriverLink;
@@ -102,7 +103,10 @@ end;
 
 class function TModelConexaoFiredac.New: iModelConexao;
 begin
-     Result := Self.Create;
+     if not Assigned(FInstance) then     // Singleton
+        FInstance := Self.Create;
+
+     Result := FInstance;
 end;
 
 function TModelConexaoFiredac.Parametros: iModelConexaoParametros;

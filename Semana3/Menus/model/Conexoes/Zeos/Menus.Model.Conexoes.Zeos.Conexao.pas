@@ -9,6 +9,7 @@ uses
 type
   TModelConexaoZeos = class(TInterfacedObject, iModelConexao, iModelConexaoParametros)
        private
+         class var FInstance: TModelConexaoZeos;
          FConexao  : TZConnection;
          FDatabase : String;
          FUserName : String;
@@ -93,7 +94,10 @@ end;
 
 class function TModelConexaoZeos.New: iModelConexao;
 begin
-     Result := Self.Create;
+     if not Assigned(FInstance) then // Singleton
+        FInstance := Self.Create;
+
+     Result := FInstance;
 end;
 
 function TModelConexaoZeos.Parametros: iModelConexaoParametros;

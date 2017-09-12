@@ -15,6 +15,7 @@ type
     procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
+    procedure ExibirConfiguracoes;
   public
     { Public declarations }
   end;
@@ -24,11 +25,12 @@ var
 
 implementation
 
+uses
+  Menus.Controller.Facade;
+
 {$R *.fmx}
 
-uses Menus.Controller.ListaBox.Factory;
-
-procedure TFrmMain.FormCreate(Sender: TObject);
+procedure TFrmMain.ExibirConfiguracoes;
 begin
     {$IFDEF FIREDAC}
         Label1.Text := 'Conectado via Firedac';
@@ -36,7 +38,13 @@ begin
     {$IFDEF ZEOS}
         Label1.Text := 'Conectado via Zeos';
     {$ENDIF}
-    TControllerListaBoxFactory.New.Principal(Layout1).Exibir;
+end;
+
+procedure TFrmMain.FormCreate(Sender: TObject);
+begin
+    ExibirConfiguracoes;
+    TControllerFacade.New.Menu.ListBox.Principal(Layout1).Exibir;
+    //TControllerListaBoxFactory.New.Principal(Layout1).Exibir;
 end;
 
 end.
