@@ -9,8 +9,8 @@ uses
   FMX.Grid.Style, FMX.ScrollBox, FMX.Grid, Data.DB, Data.Bind.EngExt,
   Fmx.Bind.DBEngExt, Fmx.Bind.Grid, System.Bindings.Outputs, Fmx.Bind.Editors,
   Data.Bind.Components, Data.Bind.Grid, Data.Bind.DBScope,
-  Menus.Controller.Entity.Factory,
-  Menus.Controller.Entity.Interfaces, FMX.Edit;
+  Menus.Controller.Entity.Interfaces, FMX.Edit, Menus.Controller.Interfaces,
+  Menus.Controller.Facade;
 
 type
   TFrmProduto = class(TForm)
@@ -50,8 +50,6 @@ implementation
 
 {$R *.fmx}
 
-uses Menus.Controller.ListaBox.Factory;
-
 procedure TFrmProduto.Button1Click(Sender: TObject);
 begin
       dsListaDados.DataSet.Append;
@@ -81,9 +79,10 @@ end;
 
 procedure TFrmProduto.FormCreate(Sender: TObject);
 begin
-     TControllerListaBoxFactory.New.Produtos(Layout1).Exibir;
-     FEntity :=  TControllerEntityFactory.New.Produto;
-     FEntity.Lista(dsListaDados);
+     FEntity :=  TControllerFacade.New.Entity.Entity.Produto.Lista(dsListaDados);
+     TControllerFacade.New.Menu.ListBox.Produtos(Layout1).Exibir;
+     //TControllerListaBoxFactory.New.Produtos(Layout1).Exibir;
+     //FEntity.Lista(dsListaDados);
 end;
 
 procedure TFrmProduto.PreencherDados;

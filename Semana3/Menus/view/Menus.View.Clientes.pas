@@ -6,10 +6,10 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.StdCtrls,
   FMX.Controls.Presentation, FMX.Layouts, Menus.Controller.Entity.Interfaces,
-  Menus.Controller.Entity.Factory, Data.DB, System.Rtti, FMX.Grid.Style,
+  Data.DB, System.Rtti, FMX.Grid.Style,
   FMX.ScrollBox, FMX.Grid, Data.Bind.EngExt, Fmx.Bind.DBEngExt, Fmx.Bind.Grid,
   System.Bindings.Outputs, Fmx.Bind.Editors, Data.Bind.Components,
-  Data.Bind.Grid, Data.Bind.DBScope;
+  Data.Bind.Grid, Data.Bind.DBScope, Menus.Controller.Facade;
 
 type
   TFrmCliente = class(TForm)
@@ -35,15 +35,15 @@ var
 
 implementation
 
-uses Menus.Controller.ListaBox.Factory;
-
 {$R *.fmx}
 
 procedure TFrmCliente.FormCreate(Sender: TObject);
 begin
-     TControllerListaBoxFactory.New.Clientes(Layout1).Exibir;
+     {TControllerListaBoxFactory.New.Clientes(Layout1).Exibir;
      FEntity :=  TControllerEntityFactory.New.Cliente;
-     FEntity.Lista(dsListaDados);
+     FEntity.Lista(dsListaDados);}
+     FEntity :=  TControllerFacade.New.Entity.Entity.Cliente.Lista(dsListaDados);
+     TControllerFacade.New.Menu.ListBox.Clientes(Layout1).Exibir;
 end;
 
 procedure TFrmCliente.PreencherDados;

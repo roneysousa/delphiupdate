@@ -55,6 +55,12 @@ type
      procedure Exibir;
   end;
 
+  iControllerMenusFacade = interface
+    ['{5BD70F25-0446-4400-9117-1470F0245F1E}']
+    function ListBox : iControllerListBoxFactory;
+    function ListBoxITem : iControllerListBoxItensFactory;
+  end;
+
 implementation
 
 end.

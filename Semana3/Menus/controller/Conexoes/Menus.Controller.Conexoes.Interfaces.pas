@@ -15,6 +15,14 @@ type
     function DataSet(Conexao: iModelConexao): iModelDataSet;
   end;
 
+  iControllerConexoesFacade = interface
+     ['{FB0CEFF4-35F5-482A-83B9-617A557E142F}']
+     //function Conexao: iControllerConexoesFacade;
+     function iConexao: iModelConexao;
+     function iDataSet: iModelDataSet;
+  end;
+
+
 implementation
 
 end.

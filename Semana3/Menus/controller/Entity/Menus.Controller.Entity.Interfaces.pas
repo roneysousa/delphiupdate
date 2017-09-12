@@ -17,6 +17,11 @@ type
     function Cliente: iControllerEntity;
   End;
 
+  iControllerEntityFacade = interface
+    ['{6C5C6B2C-332F-4226-B674-9DF44AA4A08A}']
+    function Entity: iControllerEntityFactory;
+  end;
+
 implementation
 
 end.

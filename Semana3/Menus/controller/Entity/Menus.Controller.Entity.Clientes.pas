@@ -5,13 +5,13 @@ interface
 uses Menus.Controller.Entity.Interfaces, Menu.Model.Conexoes.Interfaces,
  Menus.Controller.Conexoes.Factory.Conexao,
  Menus.Controller.Conexoes.Factory.DataSet, Menus.Model.Entity.Interfaces,
- Menus.Model.Entity.Factory, Data.DB;
+ Menus.Model.Entity.Factory, Data.DB, Menus.Controller.Conexoes.Interfaces,
+ Menus.Controller.Conexoes.Facade;
 
 type
   TControllerEntityClientes = class(TInterfacedObject, iControllerEntity)
        private
-         FConexao: iModelConexao;
-         FDataSet: iModelDataSet;
+         FFacadeConexao: iControllerConexoesFacade;
          FEntity: iModelEntity;
        public
          constructor Create;
@@ -26,9 +26,8 @@ implementation
 
 constructor TControllerEntityClientes.Create;
 begin
-     FConexao := TControllerConexoesFactoryConexao.New.Conexao;
-     FDataSet := TControllerConexoesFactoryDataSet.New.DataSet(FConexao);
-     FEntity  := TModelEntityFactory.New.Clientes(FDataSet);
+     FFacadeConexao := TControllerConexoesFacade.New;
+     FEntity        := TModelEntityFactory.New.Clientes(FFacadeConexao.iDataSet);
 end;
 
 destructor TControllerEntityClientes.Destroy;
